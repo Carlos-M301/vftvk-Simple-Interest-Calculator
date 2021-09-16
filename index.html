@@ -1,16 +1,42 @@
-<html>
+<!DOCTYPE html>
     <head>
-    <script src="script.js"></script>
+        <title>Simple Interest Calculator</title>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="main">
+            <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+            <fieldset >
+                <label for="amount">Amount</label><br>
+                <input type="number" name="amount" min="1" id="principal"><br>
 
-        <button onclick="compute()">Compute</button>
+                <label for="rate">Rate</label><br>
+                <input type="range" min="1" max="20" step=".25" name="rate" value="default_val" id="rate" onchange="getRateValue()"> 
+                <span id="rate_val">
+                    10.25%
+                </span>
+                    <br>
+
+                <label for="nOfYear">No. of Years</label><br>
+                <select name="nOfYear" id="years">
+                    <option value="" disabled>Select an option</option>
+                </select>
+                <br><br>
+                <button onclick="compute()">Compute</button><br><br>
+
+                <span id="result"></span>
+
+                <br>
+                
+                <footer>
+                    &#169; This Calculator belongs to Carlos Muñoz :D
+                </footer>
+            </fieldset>
+            
+            
+            
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
