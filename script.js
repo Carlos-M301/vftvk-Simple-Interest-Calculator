@@ -12,10 +12,16 @@ function compute()
         alert("One or more inputs are empty, please fill it");
     }
     else{
-        let newYear = new Date().getFullYear()+parseInt(years.value);
-        let interest = amount.value * years.value * rate.value /100;
-        result.innerHTML = "If you deposit "+amount.value+",\<br\>at an interest rate of "+rate.value+"%\<br\>You will receive an amount of "+interest+",\<br\>in the year "+newYear+"\<br\>";
-        clearInputs();
+        if(amount.value <= 0){
+            alert("You need to enter a positive number");
+            amount.focus();
+        }
+        else{
+            let newYear = new Date().getFullYear()+parseInt(years.value);
+            let interest = amount.value * years.value * rate.value /100;
+            result.innerHTML = "If you deposit <span class='yellow'>"+amount.value+"</span>,\<br\>at an interest rate of <span class='yellow'>"+rate.value+"%</span>,\<br\>You will receive an amount of <span class='yellow'>"+interest+"</span>,\<br\>in the year <span class='yellow'>"+newYear+"</span>\<br\>";
+            clearInputs();
+        }
     }
 }
 

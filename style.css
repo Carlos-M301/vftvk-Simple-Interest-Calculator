@@ -31,3 +31,7 @@ footer{
 button{
     font-size: 1rem;
 }
+
+.yellow{
+    background-color: yellow;
+}
