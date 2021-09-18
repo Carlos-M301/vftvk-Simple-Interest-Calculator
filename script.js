@@ -15,6 +15,7 @@ function compute()
         if(amount.value <= 0){
             alert("You need to enter a positive number");
             amount.focus();
+            amount.value = "";
         }
         else{
             let newYear = new Date().getFullYear()+parseInt(years.value);
@@ -35,7 +36,7 @@ function populateYears(){
 }
 
 function getRateValue(){
-    rateValue.innerHTML = rate.value;
+    rateValue.innerHTML = rate.value +"%";
 }
 
 function clearInputs(){
